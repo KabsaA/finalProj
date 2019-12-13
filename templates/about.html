@@ -1,20 +1,20 @@
 {% extends "layout.html" %}
 
-<div class=book_post>
+<div class=create_post>
 
     {% block content %}
 
-<form method='POST' action='/book_post'>
+<form method='POST' action='/create_post'>
 
-    <!--User Insert Personal Information-->
+    <!--add post details-->
     <h3>Name?</h3>
-    <input type='text' name='firstname' placeholder="First Name">
+    <input type='text' name='firstname'>
 
     <h3>Date</h3>
-    <input type='text' name='lastname' placeholder="Last Name">
+    <input type='text' name='lastname'>
 
     <h3>Post</h3>
-    <input type='text' name='address' placeholder="Enter your Address">
+    <input type='text' name='address'>
 
     <input type='submit' value='Submit'>
 </form>

@@ -39,13 +39,13 @@ def about():
 
 @app.route('/')
 def index():
-    """Show all appointments."""
+    """Show posts."""
     return render_template('home.html', posts=posts.find())
 
-@app.route('/book_post')
+@app.route('/create_post')
 def show_book_post_form():
-    """Show Book Appointment Form"""
-    return render_template('book_post.html')
+    """Show Posts"""
+    return render_template('post_show.html')
 
 @app.route('/book_post', methods=['Post'])
 def submit_post():
@@ -61,19 +61,19 @@ def submit_post():
 
 @app.route('/posts/<post_id>', methods=['GET'])
 def post_show(post_id):
-    """Show a single post."""
+    """Show a post."""
     post = posts.find_one({'_id': ObjectId(post_id)})
     return render_template('post_show.html', post=post)
 
 @app.route('/post/<post_id>/edit')
 def post_edit(post_id):
-    """Show the edit form for an post."""
+    """Edit a post."""
     post = posts.find_one({'_id': ObjectId(post_id)})
-    return render_template('post_edit.html', post=post, title='Edit Appointment')
+    return render_template('post_edit.html', post=post, title='Edit Post')
 
 @app.route('/post/<post_id>', methods=['POST'])
 def post_update(post_id):
-    """Submit an edited post."""
+    """Add edit to post."""
     updated_post = {
         'firstname':request.form.get('firstname'),
         'lastname':request.form.get('lastname'),
@@ -86,7 +86,7 @@ def post_update(post_id):
 
 @app.route('/post/<post_id>/delete', methods=['POST'])
 def post_delete(post_id):
-    """Delete one post."""
+    """Delete post."""
     posts.delete_one({'_id': ObjectId(post_id)})
     return redirect(url_for('index'))
 
