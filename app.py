@@ -43,17 +43,17 @@ def index():
     return render_template('home.html', posts=posts.find())
 
 @app.route('/create_post')
-def show_book_post_form():
+def show_post():
     """Show Posts"""
-    return render_template('post_show.html')
+    return render_template('about.html')
 
-@app.route('/book_post', methods=['Post'])
+@app.route('/create_post', methods=['Post'])
 def submit_post():
     """Submit new post."""
     print(request.form)
     post = {
-       'firstname':request.form.get('firstname'),
-       'lastname':request.form.get('lastname'),
+       'name':request.form.get('name'),
+       'date':request.form.get('date'),
 
    }
     post_id = posts.insert_one(post).inserted_id
@@ -75,9 +75,9 @@ def post_edit(post_id):
 def post_update(post_id):
     """Add edit to post."""
     updated_post = {
-        'firstname':request.form.get('firstname'),
-        'lastname':request.form.get('lastname'),
-        'address':request.form.get('address'),
+        'name':request.form.get('name'),
+        'date':request.form.get('date'),
+        'post':request.form.get('post'),
        }
 
     posts.update_one({'_id': ObjectId(post_id)}, {'$set': updated_post})
