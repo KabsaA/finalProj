@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 import os
 from pymongo import MongoClient
 
-host = os.environ.get('MONGODB_URI','mongodb://localhost:27017/finalProj')
+host = os.environ.get('MONGODB_URI','mongodb://localhost:27017/posts')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 posts = db.posts
