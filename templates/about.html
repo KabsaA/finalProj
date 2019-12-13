@@ -1,4 +1,25 @@
 {% extends "layout.html" %}
-{% block content %}
-    <h1>About Page</h1>
+
+<div class=book_post>
+
+    {% block content %}
+
+<form method='POST' action='/book_post'>
+
+    <!--User Insert Personal Information-->
+    <h3>Name?</h3>
+    <input type='text' name='firstname' placeholder="First Name">
+
+    <h3>Date</h3>
+    <input type='text' name='lastname' placeholder="Last Name">
+
+    <h3>Post</h3>
+    <input type='text' name='address' placeholder="Enter your Address">
+
+    <input type='submit' value='Submit'>
+</form>
+
+</div>
+
+
 {% endblock content %}
