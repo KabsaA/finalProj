@@ -5,12 +5,12 @@
 {% block content %}
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-        <h5 class="card-title">{{post.name}} {{post.date }}</h5>
-        <p class="card-text"> {{post.post }}</p>
-        <a href='/post/{{post._id}}/edit' class="btn btn-primary">Edit</a>
+        <h5 class="card-title">{{ post.name }} {{ post.date }}</h5>
+        <p class="card-text"> {{ post.post }}</p>
+        <a href='/post/{{post._id}}/edit' class="btn btn-secondary">Edit</a>
         <form method='POST' action='/post/{{ post._id }}/delete'>
             <input type='hidden' name='_method' value='DELETE'>
-            <button class='btn btn-primary' type='submit'>Delete</button>
+            <button class='btn btn-secondary' type='submit'>Delete</button>
         </form>
     </div>
 </div>
