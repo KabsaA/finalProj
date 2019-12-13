@@ -83,13 +83,11 @@ def post_update(post_id):
     posts.update_one({'_id': ObjectId(post_id)}, {'$set': updated_post})
     return redirect(url_for('post_show', post_id=post_id))
 
-
 @app.route('/post/<post_id>/delete', methods=['POST'])
 def post_delete(post_id):
     """Delete post."""
     posts.delete_one({'_id': ObjectId(post_id)})
     return redirect(url_for('index'))
-
 
 
 if __name__ == '__main__':
