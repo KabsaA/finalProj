@@ -8,7 +8,7 @@
         <h5 class="card-title">{{ post.name }} {{ post.date }} </h5>
         <a href='/post/{{post._id}}/edit' class="btn btn-secondary">Edit</a>
         <form method='POST' action='/post/{{ post._id }}/delete'>
-            <input name='_method' value='DELETE'>
+            <input type='hidden' name='_method' value='DELETE'>
             <button class='btn btn-secondary' type='submit'>Delete</button>
         </form>
     </div>
