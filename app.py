@@ -32,7 +32,7 @@ def index():
 
 @app.route("/about", methods=['GET','POST'])
 def about():
-    return render_template('about.html', title="New Post" )
+    return render_template('post_show.html', title="New Post" )
 
 
 

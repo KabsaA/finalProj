@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method='POST' action='/post/{{post._id}}/show'>
+        <form method='POST' action='/post/{{post._id}}'>
             <input type='hidden' name='_method' value='PUT'/>
         {% include 'partials/form.html' %}
             <div class='form-group'>
