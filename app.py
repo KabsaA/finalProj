@@ -32,6 +32,7 @@ def index():
 
 @app.route("/about", methods=['GET','POST'])
 def about():
+    """About Page"""
     return render_template('about.html', title="New Post" )
 
 
