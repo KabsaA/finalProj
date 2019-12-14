@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from bson.objectid import ObjectId
 import os
 from pymongo import MongoClient
-
 host = os.environ.get('MONGODB_URI','mongodb://localhost:27017/posts')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
@@ -26,11 +25,6 @@ app = Flask(__name__)
 #     }
 # ]
 
-
-# @app.route("/")
-# @app.route("/home")
-# def home():
-#     return render_template('home.html', post=post)
 @app.route('/')
 def index():
     """Show posts."""
