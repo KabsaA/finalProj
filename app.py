@@ -30,11 +30,9 @@ def index():
     """Show posts."""
     return render_template('home.html', posts=posts.find())
 
-@app.route("/posts/<post_id>", methods=['GET','POST'])
+@app.route("/about", methods=['GET','POST'])
 def about():
-    post = posts.find_one({'_id': ObjectId(post_id)})
-    return render_template('post_show.html', post=post)
-    #return render_template('post_show.html', title="New Post" )
+    return render_template('about.html', title="New Post" )
 
 
 
