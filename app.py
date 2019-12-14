@@ -48,7 +48,6 @@ def submit_post():
     post = {
        'name':request.form.get('name'),
        'date':request.form.get('date'),
-       'body':request.form.get('body')
 
    }
     post_id = posts.insert_one(post).inserted_id
@@ -72,7 +71,6 @@ def post_update(post_id):
     updated_post = {
         'name':request.form.get('name'),
         'date':request.form.get('date'),
-        'body':request.form.get('body'),
        }
 
     posts.update_one({'_id': ObjectId(post_id)}, {'$set': updated_post})
